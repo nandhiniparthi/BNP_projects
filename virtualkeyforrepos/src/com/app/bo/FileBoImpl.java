@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class FileBoImpl implements FileBo {
 	Scanner sc=new Scanner (System.in);
 	@Override
-	public void createDirectories(String name) {
+	public void createFile(String name) {
 		System.out.println("Enter path for the file with \"\\\"at the end: ");//with "\"at the end
 		String path=sc.nextLine();
 		File file=new File(""+path+""+name);
@@ -36,19 +36,16 @@ public class FileBoImpl implements FileBo {
 
 	@Override
 	public void deletefile(String name) {
-		System.out.println("Enter path for the file with \\\"\\\\\\\"at the end:: ");//with "\"at the end
+		System.out.println("Enter path for the file with \"\\\"at the end: ");//with "\"at the end
 		String path=sc.nextLine();
 		File file=new File(""+path+""+name);
 		
 		if(file.exists())
 		{
-			try {
+		
 			if(file.delete())
 			{
 			System.out.println("File deleted sucessfully!!!!");
-			}}
-			catch(Exception e){
-				System.out.println(e);
 			}
 		}
 		else {
@@ -59,11 +56,12 @@ public class FileBoImpl implements FileBo {
 
 	@Override
 	public void searchfile(String name) {
-		System.out.println("Enter path for the file with \\\"\\\\\\\"at the end:: ");//with "\"at the end
+		System.out.println("Enter path for the file with \"\\\"at the end: ");//with "\"at the end
 		String path=sc.nextLine();
 		File file=new File(""+path+""+name);
 
-		if(exist(file, name))
+		try{
+			if(file.exists())
 		{
 			
 			System.out.println("File "+name+" was found at "+path+" !!!!");
@@ -71,13 +69,14 @@ public class FileBoImpl implements FileBo {
 		}
 		else {
 			System.out.println("File "+name+" was not found at "+path+" !!!!");
-		}
+		}}catch(Exception e) {
+			System.out.println(e);}
 		
 	}
 
 	@Override
 	public void getAllFiles() {
-		System.out.println("Enter path for the file with \\\"\\\\\\\"at the end:: ");//with "\"at the end
+		System.out.println("Enter path for the file with \"\\\"at the end: ");//with "\"at the end
 		String path=sc.nextLine();
 		 try { 
 	            File f = new File(path); 
@@ -97,7 +96,7 @@ public class FileBoImpl implements FileBo {
 	@Override
 	public void sortfilesinaccorder() {
 	
-		System.out.println("Enter path for the file with \\\"\\\\\\\"at the end:: ");//with "\"at the end
+		System.out.println("Enter path for the file with \"\\\"at the end: ");//with "\"at the end
 		String path=sc.nextLine();
 		File file=new File(path);
 		File[] files=file.listFiles();
@@ -112,14 +111,5 @@ public class FileBoImpl implements FileBo {
 		}
 		
 	}
-	public boolean exist(File dir,String filename) {
-		String[] files=dir.list();
-		for(String file:files) {
-			if(file.equals(filename)) {
-				return true;
-			}
-		}
-		return false;
-		
+	
 	}
-}

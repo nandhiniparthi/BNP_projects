@@ -37,7 +37,7 @@ public class Main {
 			case 2:
 				System.out.println("Enter the name for the file:");
 				String filename=sc.nextLine();
-				filebo.createDirectories(filename);
+				filebo.createFile(filename);
 				break;
 			case 3:
 				System.out.println("Enter the name for the file:");
