@@ -1,0 +1,78 @@
+package com.app.bo;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+public class FileBoImpl implements FileBo {
+	Scanner sc=new Scanner (System.in);
+	@Override
+	public void createDirectories(String name) {
+		System.out.println("Enter path for the file: ");//with "\"at the end
+		String path=sc.nextLine();
+		File file=new File(""+path+""+name);
+
+		if(file.exists())
+		{
+			System.out.println("File already exists!!!Try again");
+		}
+		else {
+		boolean b;
+		try {
+			b = file.createNewFile();
+			if(b)
+			{
+				 System.out.println("file created successfully.");
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		}
+
+		
+	}
+
+	@Override
+	public void deletefile(String name) {
+		System.out.println("Enter path for the file: ");//with "\"at the end
+		String path=sc.nextLine();
+		File file=new File(""+path+""+name);
+
+		if(file.exists())
+		{
+			try {
+			if(file.delete())
+			{
+			System.out.println("File deleted sucessfully!!!!");
+			}}
+			catch(Exception e){
+				System.out.println(e);
+			}
+		}
+		else {
+			System.out.println("file doesnot exist!!!!");
+		}
+		
+	}
+
+	@Override
+	public void searchfile(String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getAllFiles() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+
+}

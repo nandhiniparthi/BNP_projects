@@ -1,0 +1,31 @@
+package com.app.model;
+
+public class File {
+
+	private String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public File(String name) {
+		super();
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "File [name=" + name + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+
+	public File() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+}

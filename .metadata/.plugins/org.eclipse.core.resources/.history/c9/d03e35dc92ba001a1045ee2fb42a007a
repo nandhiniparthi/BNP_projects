@@ -1,0 +1,14 @@
+package com.app.bo;
+
+import java.io.File;
+import java.util.List;
+
+public interface FileBo {
+
+		public File createDirectories(File file);
+		public File addfile(String name);
+		public File deletefile(String name);
+		public File searchfile(String name);
+		public List<File> getAllFiles();
+		
+}

@@ -1,0 +1,49 @@
+package com.app.bo;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+public class FileBoImpl implements FileBo {
+
+	
+	@Override
+	public File createDirectories(File file) {
+		System.out.println("Enter the path for creating a directory:");
+		Scanner sc= new Scanner(System.in);
+		String path=sc.next();
+		System.out.println("Enter the name for the directory:");
+		path=path+sc.next();
+		file=new File(path);
+		
+		return file;
+	}
+	@Override
+	public File addfile(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public File deletefile(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public File searchfile(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<File> getAllFiles() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+}

@@ -1,0 +1,40 @@
+package com.app.bo;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class FileBoImpl implements FileBo {
+private static Map<String,File> filemap=new HashMap<>();
+	@Override
+	public File createFile(File file) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public File addfile(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public File deletefile(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public File searchfile(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<File> getAllFiles() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
