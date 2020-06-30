@@ -38,7 +38,10 @@ public class FileBoImpl implements FileBo {
 	public void deletefile(String name) {
 		System.out.println("Enter path for the file with \"\\\"at the end: ");//with "\"at the end
 		String path=sc.nextLine();
-		File file=new File(""+path+""+name);
+		
+		try{
+			File file=new File(""+path+""+name);
+		
 		
 		if(file.exists())
 		{
@@ -51,7 +54,10 @@ public class FileBoImpl implements FileBo {
 		else {
 			System.out.println("file doesnot exist!!!!");
 		}
-		
+		}catch(Exception e)
+		{
+			System.out.println(e);
+		}
 	}
 
 	@Override
